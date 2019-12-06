@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Charges</title>
+
+
+
+    <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="vendors/form-helpers/css/bootstrap-formhelpers.min.css" rel="stylesheet">
+    <link href="vendors/select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="vendors/tags/css/bootstrap-tags.css" rel="stylesheet">
+
+    <link href="css/valicatecss.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link href="css/forms.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="page-content">
+
+    <div class="row">
+<!--列表选择-->
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content-box-small">
+
+                        <div class="row" style="padding-bottom: 3%">
+                            <div class="col-md-12">
+                                <div class="col-sm-12 label label-primary" style="padding: 3%;font-size: smaller;text-align: left">未诊患者：</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="example1" class="display" style="width:100%">
+                                    <thead style="font-size: smaller">
+                                    <tr>
+                                        <th>病历号</th>
+                                        <th>姓名</th>
+                                        <th>性别</th>
+                                        <th>年龄</th>
+                                        <th>挂号</th>
+                                        <th>状态</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+
+                        <div class="row"style="padding-bottom: 3%">
+                            <div class="col-md-12">
+                                <div class="col-sm-12 label label-primary" style="padding: 3%;font-size: smaller;text-align: left">已诊患者：</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table id="example2" class="display" style="width:100%">
+                                    <thead style="font-size: smaller">
+                                    <tr>
+                                        <th>病历号</th>
+                                        <th>姓名</th>
+                                        <th>性别</th>
+                                        <th>年龄</th>
+                                        <th>挂号</th>
+                                        <th>状态</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-md-9" id="patient_content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content-box-large">
+
+                       <div class="panel-heading">
+                           <div class="panel-title"  id="patientInfo" style="padding-left: 0px;font-size:12px;color: #0e90d2">患者姓名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年龄：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病历号：</div>
+                       </div>
+                       <div class="panel-body">
+                           <ul id="myTab" class="nav nav-tabs col-md-12">
+                               <li class="active">
+                                   <a href="#mrhomepage" data-toggle="tab">
+                                       病历首页
+                                   </a>
+                               </li>
+                               <li><a href="#check" data-toggle="tab">检查申请</a></li>
+                               <li><a href="#proof" data-toggle="tab">检验申请*</a></li>
+                               <li><a href="#consult" data-toggle="tab">门诊确诊*</a></li>
+                               <li><a href="#deal" data-toggle="tab">处置申请*</a></li>
+                               <li><a href="#prescrition1" data-toggle="tab">成药处方</a></li>
+                               <li><a href="#prescription2" data-toggle="tab">草药处方</a></li>
+                           </ul>
+                           <div id="myTabContent" class="tab-content">
+<!-- 病历首页-->
+                               <div class="tab-pane fade in active" id="mrhomepage">
+                                   <form class="form-horizontal" role="form" id="mrhomepage_form">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="button_a_panel col-sm-12">
+                                                    <div class="col-sm-2 col-sm-offset-3">
+                                                        <a class="button_a" id="mrhsave"><i class="glyphicon glyphicon-floppy-save"></i>&nbsp; 暂存</a>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <a class="button_a" id="mrhsubmit"><i class="glyphicon glyphicon-ok-circle"></i>&nbsp;提交</a>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <a class="button_a" id="mrhreset"><i class="glyphicon glyphicon-remove-circle"></i>&nbsp;清空</a>
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <a class="button_a" id="mrgrefresh"><i class="glyphicon glyphicon-refresh"></i>&nbsp;刷新</a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                       <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="col-sm-12 label label-primary" style="padding: 8%;font-size: smaller">病史内容</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+
+                                           <div class="form-group">
+                                                <label class="col-sm-2 control-label">主诉</label>
+                                                <div class="col-sm-9">
+                                                    <textarea class="form-control" placeholder="Textarea" rows="1" name="chiefComplaint" required></textarea>
+                                                </div>
+                                           </div>
+                                           <div class="form-group">
+                                               <label class="col-sm-2 control-label">现病史</label>
+                                               <div class="col-sm-9">
+                                                   <textarea class="form-control" placeholder="Textarea" rows="2" name="presentIllness" required></textarea>
+                                               </div>
+                                           </div>
+                                           <div class="form-group">
+                                               <label class="col-sm-2 control-label" >现病治疗情况</label>
+                                               <div class="col-sm-9">
+                                                   <textarea class="form-control" placeholder="Textarea" rows="2" name="presentTreatment" required></textarea>
+                                               </div>
+                                           </div>
+                                           <div class="form-group">
+                                               <label class="col-sm-2 control-label">既往史</label>
+                                               <div class="col-sm-9">
+                                                   <textarea class="form-control" placeholder="Textarea" rows="2" name="pastHistory" required></textarea>
+                                               </div>
+                                           </div>
+                                           <div class="form-group">
+                                               <label class="col-sm-2 control-label">过敏史</label>
+                                               <div class="col-sm-9">
+                                                   <textarea class="form-control" placeholder="Textarea" rows="2" name="allergyHistory" required></textarea>
+                                               </div>
+                                           </div>
+                                           <div class="form-group">
+                                               <label class="col-sm-2 control-label">体格检查</label>
+                                               <div class="col-sm-9">
+                                                   <textarea class="form-control" placeholder="Textarea" rows="2" required name="physicalExam"></textarea>
+                                               </div>
+                                           </div>
+                                        </div>
+                                    </form>
+                               </div>
+                               <div class="tab-pane fade" id="check">
+                                   <p>检查申请</p>
+                               </div>
+                               <div class="tab-pane fade" id="proof">
+                                   <p>检验申请</p>
+                               </div>
+                               <div class="tab-pane fade" id="consult">
+                                   <p>门诊确诊</p>
+                               </div>
+                               <div class="tab-pane fade" id="deal">
+                                   <p>处置申请</p>
+                               </div>
+                               <div class="tab-pane fade" id="prescrition1">
+                                   <div class="row">
+                                       <div class="col-md-12" style="margin-top: 0.5%">
+                                           <div class="col-sm-1 label label-primary" style="font-size: small;text-align: center;margin-right: 0.5%">门诊诊断：</div>
+                                           <div class="col-sm-4 label label-default" style="font-size: small;text-align: left" id="diagresult">【西医诊断】急性肠胃炎</div>
+                                       </div>
+
+                                   </div>
+                                   <div class="row">
+                                       <div class="col-md-12">
+                                           <div class="button_a_panel col-sm-12" style="margin-top: 0.5%">
+                                               <div class="col-sm-2">
+                                                   <a class="button_a" id="presadd" ><i class="glyphicon glyphicon-plus-sign"></i>&nbsp;添方</a>
+                                               </div>
+                                               <div class="col-sm-2">
+                                                   <a class="button_a" id="presdel"><i class="glyphicon glyphicon-trash"></i>&nbsp;删方</a>
+                                               </div>
+                                               <div class="col-sm-2">
+                                                   <a class="button_a" id="pressubmit"><i class="glyphicon glyphicon-ok-circle"></i>&nbsp;开立</a>
+                                               </div>
+                                               <div class="col-sm-2">
+                                                   <a class="button_a" id="prescancel"><i class="glyphicon glyphicon-remove-circle"></i>&nbsp;作废</a>
+                                               </div>
+                                               <div class="col-sm-2">
+                                                   <a class="button_a" id="medadd"><i class="glyphicon glyphicon-plus"></i>&nbsp;添药</a>
+                                               </div>
+                                               <div class="col-sm-2">
+                                                   <a class="button_a" id="meddel"><i class="glyphicon glyphicon-remove"></i>&nbsp;删药</a>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="row">
+                                       <div class="col-md-12">
+                                       <div class="col-md-3">
+                                           <div class="row">
+                                               <div class="col-md-12" >
+                                                   <div class="col-sm-3 label label-primary" style="font-size: smaller;text-align: center;margin-right: 0.5%">处方：</div>
+
+                                               </div>
+                                           </div>
+                                           <div class="row">
+                                                <table id="example3" class="display1" style="width:100%">
+                                               <thead style="font-size: smaller">
+                                               <tr>
+                                                   <th>病历号</th>
+                                                   <th>开方医生</th>
+                                                   <th>处方名称</th>
+                                                   <th>挂号</th>
+                                                   <th>ID</th>
+                                                   <th>开立时间</th>
+                                                   <th>类型</th>
+                                                   <th>状态</th>
+                                               </tr>
+                                               </thead>
+                                               <tbody>
+
+                                               </tbody>
+                                           </table>
+                                           </div>
+
+                                       </div>
+                                       <div class="col-md-8 col-md-offset-1">
+                                           <div class="row">
+                                               <div class="col-md-12" >
+                                                   <div class="col-sm-3 label label-primary" style="font-size: smaller;text-align: center;margin-right: 0.5%">本处方明细：</div>
+
+                                               </div>
+                                           </div>
+                                           <div class="row">
+                                               <table id="example4" class="display1" style="width:100%">
+                                                   <thead style="font-size: smaller">
+                                                   <tr>
+                                                       <th>ID</th>
+                                                       <th>名称</th>
+                                                       <th>规格</th>
+                                                       <th>单价</th>
+                                                       <th>药瓶ID</th>
+                                                       <th>用量</th>
+                                                       <th>处方ID</th>
+                                                       <th>用法</th>
+                                                       <th>数量</th>
+                                                       <th>频次</th>
+                                                       <th>状态</th>
+
+                                                   </tr>
+                                                   </thead>
+                                                   <tbody>
+
+                                                   </tbody>
+                                               </table>
+                                           </div>
+
+                                       </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="tab-pane fade" id="prescription2">
+                                   <p>草药处方</p>
+                               </div>
+
+                           </div>
+
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+<!--    添加新的处方信息模态框-->
+    <div class="modal fade" id="addPrescriptionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">新增处方</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="prescription_form" role="form">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="content-box-large">
+                                    <div class="form-group">
+                                        <label for="prescriptionName" class="col-sm-2 control-label">处方名称</label>
+                                        <div class="col-sm-4">
+                                            <input type="text"  class="form-control" name="preName" id="prescriptionName" placeholder="请输入处方名称" required>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button id="addPre" type="button" class="btn btn-primary">添加</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+<!--    添加新药信息模态框-->
+    <div class="modal fade" id="addMedicineModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel1">新增处方</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <table id="example5" style="width:100%">
+                            <thead style="font-size: smaller">
+                            <tr>
+                                <th>ID</th>
+                                <th>名称</th>
+                                <th>药品编码</th>
+                                <th>规格</th>
+                                <th>单位</th>
+                                <th>生产厂家</th>
+                                <th>剂型</th>
+                                <th>类型</th>
+                                <th>单价</th>
+                                <th>开立时间</th>
+                                <th>CODE</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row" style="margin-top: 5%">
+                        <form class="form form-horizontal" role="form" id="medicine_form">
+                            <div class="col-md-12">
+
+                                    <div class="form-group">
+                                        <label for="presName" class="col-sm-2 control-label">处方名称</label>
+                                        <div class="col-sm-4">
+                                            <span type="text"  class="form-control"  id="presName"  >处方名称</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="modalUseWay" class="col-sm-2 control-label">使用方式</label>
+                                        <div class="col-sm-4">
+                                            <input type="text"  class="form-control" name="useWay" id="modalUseWay" placeholder="请输入使用方式" required>
+                                        </div>
+                                        <label for="modalDosage" class="col-sm-2 control-label">药品剂量</label>
+                                        <div class="col-sm-4">
+                                            <input type="text"  class="form-control" name="dosage" id="modalDosage" placeholder="请输入药品剂量" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="modalFrequency" class="col-sm-2 control-label">使用频率</label>
+                                        <div class="col-sm-4">
+                                            <input type="text"  class="form-control" name="frequency" id="modalFrequency" placeholder="请输入使用频率" required>
+                                        </div>
+                                        <label for="modalNumber" class="col-sm-2 control-label">药品数量</label>
+                                        <div class="col-sm-4">
+                                            <input type="text"  class="form-control" name="number" id="modalNumber" placeholder="请输入药品数量" required>
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button id="addmedicines" type="button" class="btn btn-primary">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<!--表单验证-->
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+<script src="js/formToJson.js"></script>
+<script src="js/token_cookie.js"></script>
+
+<script type="text/javascript">
+    var totoalCost=0;
+    var a_validator;
+    var b_validator;
+    var c_validator
+    $().ready(function() {
+
+        //表单验证
+        a_validator = $("#mrhomepage_form").validate();
+        b_validator = $('#prescription_form').validate();
+        c_validator = $('#medicine_form').validate();
+    });
+    $(function () {
+        //后端端口号
+        var portnum = 'http://localhost:8082';
+        //选中药品信息
+        var prescribe;
+        var token = getCookie("my_token");
+
+        var medicine
+
+        //全局选中的患者
+        var patientInfo;
+        var patientDom;
+
+
+        //初始化列表
+        //未诊断患者
+        var tablepatients = $('#example1').DataTable( {
+            "paging":   false,
+            "ordering": false,
+            "info":     false,
+            "scrollY": 200,
+            "scrollCollapse": true,
+            "jQueryUI": true,
+            "columnDefs": [
+                {
+                    "targets": [ 2 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 3 ],
+                    "visible": false
+                },
+                {
+                    "targets": [ 5 ],
+                    "visible": false,
+                }
+
+            ],
+            "ajax": {
+                url:"http://localhost:8082/api/his_consult/get_non_consult_patient",
+                type:"post",
+                beforeSend:function (xhr) {
+                xhr.setRequestHeader("Authorization",token);
+                }
+            },
+
+            "columns": [
+                { "data": "medRecID" },
+                { "data": "name" },
+                { "data": "sex" },
+                { "data": "age" },
+                { "data": "regID" },
+                { "data": "status" }
+            ]
+        } );
+        //诊断患者
+        var tablepatients2 = $('#example2').DataTable( {
+            "paging":   false,
+            "ordering": false,
+            "info":     false,
+            // "bFilter": false,
+            "scrollY": 200,
+            "scrollCollapse": true,
+            "jQueryUI": true,
+            "columnDefs": [
+                {
+                    "targets": [ 2 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 3 ],
+                    "visible": false
+                },
+                {
+                    "targets": [ 5 ],
+                    "visible": false,
+                }
+
+            ],
+            "ajax": {
+                url:"http://localhost:8082/api/his_consult/get_consulted_patient",
+                type:"POST",
+                beforeSend:function (xhr) {
+                    xhr.setRequestHeader("Authorization",token);
+                }
+            },
+            "columns": [
+                { "data": "medRecID" },
+                { "data": "name" },
+                { "data": "sex" },
+                { "data": "age" },
+                { "data": "regID" },
+                { "data": "status" }
+            ]
+        } );
+        //处方列表
+        var tableprescription = $('#example3').DataTable({
+            "paging":   false,
+            "ordering": false,
+            "info":     false,
+            'searching':false,
+            "columnDefs": [
+                {
+                    "targets": [ 0 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 1 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 5 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 6 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 3 ],
+                    "visible": false
+                },
+                {
+                    "targets": [ 4 ],
+                    "visible": false,
+                }
+
+            ],
+            "ajax": "",
+            "columns": [
+                { "data": "mrid" },
+                { "data": "openDocID" },
+                { "data": "preName" },
+                { "data": "regID" },
+                { "data": "id" },
+                { "data": "type" },
+                { "data": "openTime" },
+                { "data": "status"}
+            ]
+        });
+        //药品明细列表
+        var tablemedicine = $('#example4').DataTable({
+            "paging":   false,
+            "ordering": false,
+            "info":     false,
+            'searching':false,
+            "ajax":"",
+            "columns": [
+                { "data": "id" },
+                { "data": "name" },
+                { "data": "format" },
+                { "data": "price" },
+                { "data": "drugID" },
+                {"data":"dosage"},
+                {"data":"patientpreID"},
+                {"data":"useWay"},
+                {"data":"number"},
+                {"data":"frequency"},
+                { "data": "status" }
+            ],
+            "columnDefs": [
+                {
+                    "targets": [ 0 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 4 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 6 ],
+                    "visible": false,
+                }
+
+            ]
+
+        });
+
+        //药品列表
+        var tablemedicinelist = $('#example5').DataTable({
+
+            "columnDefs": [
+                {
+                    "targets": [ 0 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 5 ],
+                    "visible": false,
+                },
+                {
+                    "targets": [ 7 ],
+                    "visible": false,
+                },
+
+                {
+                    "targets": [ 9],
+                    "visible": false
+                },
+                {
+                    "targets": [ 10],
+                    "visible": false
+                },
+                {
+                    "targets": [ 2],
+                    "visible": false
+                }
+
+
+            ],
+            "iDisplayLength":7,
+            "aLengthMenu":[5,6,7,8,10,20,30],
+            "ajax": "http://localhost:8082/api/his_prescribe/getAllDrugs",
+            "columns": [
+                { "data": "id" },
+                { "data": "name" },
+                { "data": "drugCode" },
+                { "data": "format" },
+                { "data": "unit" },
+                { "data": "manufacter" },
+                { "data": "dosage" },
+                { "data": "type" },
+                { "data": "price" },
+                { "data": "setupTime" },
+                { "data": "CODE" }
+            ]
+        });
+
+
+        //单选列表项
+        $('#example1 tbody').on( 'click', 'tr', function () {
+
+            if ( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+
+                $("#patientInfo").html("未诊断患者&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;姓名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年龄：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病历号：");
+            }
+            else {
+                tablepatients2.$('tr.selected').removeClass('selected');
+                tablepatients.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+
+                patientInfo = tablepatients.rows(".selected").data()[0];
+                if(isUndefined(patientInfo)){
+                    $("#patientInfo").html("未诊断患者&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;患者姓名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年龄：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病历号：");
+                }else {
+
+                    if (patientInfo.sex === 71) {
+                        patientInfo.sexzh = "男";
+                    } else {
+                        patientInfo.sexzh = '女';
+                    }
+                    $("#mrhomepage_form")[0].reset();
+                    $("#patientInfo").html('未诊断患者&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;患者姓名：' + patientInfo.name + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：' + patientInfo.sexzh + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年龄：' + patientInfo.age + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病历号：' + patientInfo.medRecID)
+                    tableprescription.ajax.url("http://localhost:8082/api/his_prescribe/getPrescription?regID=" + patientInfo.regID).load();
+                }
+            }
+        } );
+
+        $('#example2 tbody').on( 'click', 'tr', function () {
+            if ( $(this).hasClass('selected') ) {
+                $(this).removeClass('selected');
+                $("#patientInfo").html("已诊断患者&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;患者姓名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年龄：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病历号：");
+            }
+            else {
+                tablepatients2.$('tr.selected').removeClass('selected');
+                tablepatients.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+
+                patientInfo = tablepatients2.rows(".selected").data()[0];
+                if(isUndefined(patientInfo)){
+                    $("#patientInfo").html("已诊断患者&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;患者姓名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年龄：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病历号：");
+                }else {
+
+                    if (patientInfo.sex === 71) {
+                        patientInfo.sexzh = "男";
+                    } else {
+                        patientInfo.sexzh = '女';
+                    }
+                    $("#mrhomepage_form")[0].reset();
+                    $("#patientInfo").html('已诊断患者&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;患者姓名：' + patientInfo.name + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：' + patientInfo.sexzh + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年龄：' + patientInfo.age + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;病历号：' + patientInfo.medRecID)
+                    tableprescription.ajax.url("http://localhost:8082/api/his_prescribe/getPrescription?regID=" + patientInfo.regID).load();
+                }
+            }
+
+        } );
+
+
+        //选中处方
+        $('#example3 tbody').on( 'click', 'tr', function () {
+
+            singleSelect($(this),tableprescription);
+            prescribe = tableprescription.rows(".selected").data()[0];
+
+            if(!isUndefined(prescribe)){
+                tablemedicine.ajax.url("http://localhost:8082/api/his_prescribe/getPrescribeDetails?id=" + prescribe.id).load();
+                $("#presName").html(prescribe.preName);
+            }
+
+
+        } );
+        //选中处方明细
+        $('#example4 tbody').on( 'click', 'tr', function () {
+
+           singleSelect($(this),tablemedicine);
+
+
+        } );
+        //选中药品
+        $('#example5 tbody').on( 'click', 'tr', function () {
+
+           singleSelect($(this),tablemedicinelist)
+            medicine =  tablemedicinelist.rows(".selected").data()[0];
+            alert(JSON.stringify(medicine));
+
+        } );
+
+        $('#prescancel').click(function () {
+
+        });
+        //点击弹出添加处方信息摸具框
+        $('#presadd').click(function () {
+            if(isUndefined(patientInfo)){
+                alert("没有选中患者，请选中后操作"+JSON.stringify(patientInfo))
+            }else {
+                if(patientInfo.status!==3){
+                    alert("患者未确诊，请确诊后添加")
+                }else{
+                    $('#addPrescriptionModal').modal('show');
+                }
+            }
+        });
+
+        //添加新处方
+        $('#addPre').click(function () {
+            addPre(b_validator,portnum,patientInfo,token,tableprescription);
+            $('#addPrescriptionModal').modal('hide');
+        });
+
+        //点击弹出添加药品信息摸具框
+        $('#medadd').click(function () {
+            if (isUndefined(prescribe)){
+                alert("没有选中处方，请选中后重试")
+            } else {
+                if(prescribe.status==="已开立"){
+                    alert("处方已开立");
+                }else {
+                $('#addMedicineModal').modal('show');
+                }
+            }
+        });
+
+        //删除药品
+        $('#meddel').click(function () {
+            var preDetail =  tablemedicine.rows(".selected").data()[0];
+            if(isUndefined(preDetail)){
+                alert("没有选中药品明细，请选中后操作"+JSON.stringify(prescribe))
+            }else {
+
+                //var regID = prescribe.id;
+                // $.get("http://localhost:8082/api/his_prescribe/delPrescribe?id=" + regID, function (data) {
+                //     alert(data.msg);
+                // });
+                tablemedicine.rows(".selected").remove().draw();
+            }
+        });
+        //删除处方
+        $("#presdel").click(function () {
+
+            if(isUndefined(prescribe)){
+                alert("没有选中处方，请选中后操作"+JSON.stringify(prescribe))
+            }else {
+
+                var regID = prescribe.id;
+                $.get("http://localhost:8082/api/his_prescribe/delPrescribe?id=" + regID, function (data) {
+                    alert(data.msg);
+                });
+                tableprescription.rows(".selected").remove().draw();
+            }
+        });
+
+        //处方开立
+        $("#pressubmit").click(function () {
+            if(isUndefined(prescribe)){
+                alert("没有选中处方，请选中后操作")
+            }else {
+                if(patientInfo.status===1){
+                    alert("患者未诊断")
+                }else{
+
+                if(prescribe.status==="已开立"){
+                    alert("次药方已开立");
+                }else{
+                    var pre = prescribe.id;
+                    $.get("http://localhost:8082/api/his_prescribe/subPrescribe?id=" + pre, function (data) {
+                        alert(data.msg);
+                    });
+                    //subPresDetails(pre);
+                    charges(tablemedicine,patientInfo,token);
+                }
+
+                }
+
+            }
+            tableprescription.ajax.url("http://localhost:8082/api/his_prescribe/getPrescription?regID="+patientInfo.regID).load();
+            tablemedicine.ajax.url("http://localhost:8082/api/his_prescribe/getPrescribeDetails?id=" + prescribe.id).load();
+
+        });
+
+        //添加药品明细
+        $('#addmedicines').click(function () {
+
+            addMedicine(portnum,c_validator,prescribe,tablemedicine,medicine);
+
+            $('#addMedicineModal').modal('hide');
+
+            //tablemedicine.ajax.url("http://localhost:8082/api/his_prescribe/getPrescribeDetails?id=" + prescribe.id).load();
+        });
+
+
+//重置门诊首页为空
+        $('#mrhreset').click(function () {
+            $("#mrhomepage_form")[0].reset();
+        });
+
+        //添加门诊首页信息
+        $('#mrhsubmit').click(function () {
+            if(typeof(patientInfo) === "undefined"||(!patientInfo && typeof(patientInfo)!=="undefined" &&
+                patientInfo!=0)){
+
+                alert("没有选中患者，请选中后操作"+JSON.stringify(patientInfo))
+
+            }else {
+                addmrhomepage(a_validator,portnum,patientInfo,token);
+                consulted(patientInfo.regID);
+                tablepatients.ajax.reload();
+                tablepatients2.ajax.reload();
+            }
+
+
+        });
+
+
+    });
+
+    function addMedicine(portnum,validator,precribe,medicineTable,medicine) {
+        if (validator.form()) { //表单验证成功
+            var jsonData = $('#medicine_form').serializeObject();
+            jsonData.drugID = medicine.id;
+            jsonData.format = medicine.format;
+            jsonData.type = 1;
+            jsonData.patientpreID=precribe.id;
+            alert(JSON.stringify(jsonData));
+            $.ajax({
+                type: 'post',
+                url:  'http://localhost:8082/api/his_prescribe/addPresDetails',
+                contentType: 'application/json;charset=utf-8',
+                async:false,
+                data: JSON.stringify(jsonData),
+                success: function (data) {
+                    if (data.code === 0) {
+                        var jsondata = data.data;
+
+                        medicineTable.row.add({
+                            "id":jsondata.id,
+                            "name":medicine.name,
+                            "format":medicine.format,
+                            "drugID":medicine.id,
+                            "price":medicine.price,
+                            "number":jsonData.number,
+                            "dosage":jsonData.dosage,
+                            "patientpreID":precribe.id,
+                            "useWay":jsonData.useWay,
+                            "frequency":jsonData.frequency,
+                            "status":jsondata.status
+                        }).draw();
+                        console.log(JSON.stringify(data));
+                        alert(JSON.stringify(data));
+                        alert(data.msg);
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            });
+        }
+    }
+
+
+
+    function isUndefined(data) {
+        var boolean;
+        if(typeof(data) === "undefined"||(!data && typeof(data)!=="undefined" &&
+            data!=0)){
+            boolean = true;
+        }else {
+            boolean=false
+        }
+        return boolean;
+    }
+
+
+    function singleSelect(dom,table) {
+        if (dom.hasClass('selected') ) {
+            dom.removeClass('selected');
+        }
+        else {
+            table.$('tr.selected').removeClass('selected');
+            dom.addClass('selected');
+        }
+    }
+
+    //添加病历首页信息
+    function addmrhomepage(a_validator,portnum,patientInfo,token) {
+        if (patientInfo.status===3){
+            alert("该患者已诊断")
+        } else {
+            if (a_validator.form()) { //表单验证成功
+                var jsonData = $('#mrhomepage_form').serializeObject();
+                jsonData.regID = patientInfo.regID;
+                jsonData.mrID = patientInfo.medRecID;
+
+                alert(JSON.stringify(jsonData));
+
+                $.ajax({
+                    type: 'post',
+                    url: portnum + '/api/his_consult/addmrhomepage',
+                    async:false,
+                    contentType: 'application/json;charset=utf-8',
+                    data: JSON.stringify(jsonData),
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader("Authorization", token);
+                    },
+                    success: function (data) {
+                        if (data.code === 0) {
+                            console.log(JSON.stringify(data));
+                            alert(data.msg);
+
+                        } else {
+                            alert(data.msg);
+                        }
+                    }
+
+
+                });
+            }
+        }
+
+    }
+
+
+    function addPre(validator,portnum,patientInfo,token,tableprescription) {
+
+        if (validator.form()) { //表单验证成功
+            var jsonData = $('#prescription_form').serializeObject();
+            jsonData.regID = patientInfo.regID;
+            jsonData.mrID = patientInfo.medRecID;
+            jsonData.type = 1;
+
+            $.ajax({
+                type: 'post',
+                url: portnum + '/api/his_prescribe/addPrescribe',
+                contentType: 'application/json;charset=utf-8',
+                async:false,
+                data: JSON.stringify(jsonData),
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", token);
+                },
+                success: function (data) {
+                    if (data.code === 0) {
+                        var jsondata = data.data;
+                        tableprescription.row.add({
+                            "mrid":patientInfo.medRecID,
+                            "openDocID":jsondata.openDocID,
+                            "preName":$('#prescriptionName').val(),
+                            "regID":patientInfo.regID,
+                            "id":jsondata.id,
+                            "openTime":jsondata.openTime,
+                            "type":1,
+                            "status":jsondata.status
+                        }).draw();
+                        console.log(JSON.stringify(data));
+                        alert(JSON.stringify(data));
+                        alert(data.msg);
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            });
+        }
+
+    }
+
+    function charges(table,patientInfo,token) {
+
+        var data = (table.data());
+        var jsonData = {
+            regID:patientInfo.regID,
+            itemType:1,
+            medRecID:patientInfo.medRecID
+        };
+        $.each(data,function (index,value) {
+            jsonData.prescriptionID = value.id;
+            jsonData.price = value.price;
+            jsonData.number = value.number;
+            jsonData.name = value.name;
+            ajax_charge(jsonData,token);
+
+        });
+
+    }
+
+    function ajax_charge(data,token) {
+
+        $.ajax({
+            type: 'post',
+            url: 'http://localhost:8082/api/his_charges/addCharge',
+            contentType: 'application/json;charset=utf-8',
+            async:false,
+            data: JSON.stringify(data),
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", token);
+            },
+            success: function (data) {
+                if (data.code === 0) {
+                    console.log(JSON.stringify(data));
+                    //alert(data.msg);
+                } else {
+                    alert(data.msg);
+                }
+            }
+        });
+    }
+
+    function subPresDetails(preid) {
+        $.ajax({
+            type:"get",
+            url:'http://localhost:8082/api/his_prescribe/subPresDetail?preid='+preid,
+            async:false,
+            success:function (data) {
+                if(data!==0){
+                    alert.msg
+                }
+
+            }
+        })
+    }
+    function consulted(regID) {
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:8082/api/his_consult/consulted?regID=' + regID,
+            async: false,
+            success: function (data) {
+                if (data !== 0) {
+                    alert.msg
+                }
+            }
+        });
+    }
+
+
+    //智能搜索列表
+    function filterGlobal (tableID,searchInputID) {
+        $(tableID).DataTable().search(
+            $(searchInputID).val()).draw();
+
+    }
+</script>
+
+<script type="text/javascript">
+    $(function () { $('#collapseFour').collapse({
+        toggle: false
+    })});
+    $(function () { $('#collapseTwo').collapse('show')});
+    $(function () { $('#collapseThree').collapse('toggle')});
+    $(function () { $('#collapseOne').collapse('hide')});
+</script>
+
+</body>
+</html>

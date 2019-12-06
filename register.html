@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery UI -->
+    <link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="vendors/form-helpers/css/bootstrap-formhelpers.min.css" rel="stylesheet">
+    <link href="vendors/select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="vendors/tags/css/bootstrap-tags.css" rel="stylesheet">
+
+    <link href="css/valicatecss.css" rel="stylesheet">
+
+
+    <link href="css/forms.css" rel="stylesheet">
+    <title>Register</title>
+
+</head>
+<body>
+    <div class="page-content">
+        <div class="row">
+            <form class="form-horizontal" id="register_form" role="form">
+                <div class="col-md-12">
+<!--                    提交-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content-box-large">
+
+                                <div class="form-group">
+                                    <label for="invoice" class="col-sm-1 control-label"><span class="redSpan">*</span>发票号</label>
+                                    <div class="col-sm-4">
+                                        <input type="text"  class="form-control" name="invoiceCode" id="invoice" placeholder="请输入发票号" required>
+                                    </div>
+
+                                    <div class="col-sm-1">
+                                        <input id="reg_submit" type="button" value="Submit" class="btn btn-primary">
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <button type="reset" class="btn btn-primary">&nbsp;Reset&nbsp;</button>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+<!--   两个信息-->
+                    <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="content-box-large">
+                            <div class="panel-heading">
+                                <div class="panel-title">Patient Information Form</div>
+
+                                <div class="panel-options">
+                                    <i class="glyphicon glyphicon-refresh"></i>
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <!-- 病历号medicalRecord-->
+                                    <div class="form-group">
+
+                                        <label for="medicalRecord" class="col-sm-3 control-label"><span class="redSpan">*</span>病历号</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="medicalRecord" placeholder="请输入病历号" name="medicalRecord" required>
+                                        </div>
+
+
+
+
+                                    </div>
+<!--name-->
+                                <div class="form-group">
+                                    <label for="name" class="col-sm-3 control-label"><span class="redSpan">*</span>姓&nbsp;&nbsp;&nbsp;名</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="请输入姓名" minlength="2" required>
+                                    </div>
+                                </div>
+<!--age--->
+
+                                    <div class="form-group">
+
+                                        <label for="age" class="col-sm-3 control-label"><span class="redSpan">*</span>年&nbsp;&nbsp;&nbsp;龄</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" class="form-control" name="age" id="age" placeholder="请输入年龄" required>
+
+                                        </div>
+
+                                        <div class="col-sm-3 ">
+
+                                            <select class="form-control" id="ageu">
+                                                <option>岁</option>
+                                                <option>月</option>
+                                            </select>
+
+                                        </div>
+
+
+                                    </div>
+
+<!--sex-->
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="sex"><span class="redSpan">*</span>性&nbsp;&nbsp;&nbsp;别</label>
+                                        <div class="col-sm-3">
+
+
+                                            <select class="form-control" id="sex" name="sex" required>
+                                                <option value=71>男</option>
+                                                <option value=72>女</option>
+                                            </select>
+
+                                        </div>
+<!--年龄 age-->
+                                    </div>
+
+<!-- birth-->
+                                    <div class="form-group">
+
+                                        <label for="birth" class="col-sm-3 control-label" >出生日期</label>
+                                        <div class="col-sm-7">
+                                            <p >
+                                            <div id="birth" class="bfh-datepicker" data-format="y-m-d"  data-date="today"></div>
+                                            </p>
+                                        </div>
+                                    </div>
+<!--identityID-->
+                                    <div class="form-group">
+                                        <label for="identityID" class="col-sm-3 control-label"><span class="redSpan">*</span>身份证号</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="identityID" placeholder="请输入身份证号码" name="identityID" minlength="18" maxlength="18" required>
+                                        </div>
+                                    </div>
+                                <!--address-->
+
+                                    <div class="form-group">
+                                        <label for="address" class="col-sm-3 control-label">家庭住址</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="address" id="address" placeholder="请输入家庭住址">
+                                        </div>
+                                    </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="content-box-large">
+                            <div class="panel-heading">
+                                <div class="panel-title">Register Information Form</div>
+
+                                <div class="panel-options">
+                                    <i class="glyphicon glyphicon-refresh"></i>
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+<!--结算类别-->
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label" for="payway"><span class="redSpan">*</span>结算类别</label>
+                                        <div class="col-sm-3">
+
+
+                                            <select class="form-control" id="payway">
+                                                <option>自费</option>
+                                                <option>医保卡</option>
+                                                <option>医疗保险</option>
+                                            </select>
+
+                                        </div>
+<!--  午别-->
+                                        <label class="col-sm-3 control-label" for="noonType"><span class="redSpan">*</span>午&nbsp;&nbsp;&nbsp;别</label>
+                                        <div class="col-sm-3">
+                                            <select class="form-control" id="noonType" name="noonType">
+                                                <option value="上午">上午</option>
+                                                <option value="下午">下午</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+<!--部门-->
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="departments"><span class="redSpan">*</span>挂号科室</label>
+                                    <div class="col-sm-3">
+
+
+                                        <select class="form-control" id="departments" name="deptID">
+
+                                        </select>
+
+                                    </div>
+<!--  医生-->
+                                    <label class="col-sm-3 control-label" for="doctors"><span class="redSpan">*</span>医&nbsp;&nbsp;&nbsp;生</label>
+                                    <div class="col-sm-3">
+                                        <select class="form-control" id="doctors" name="docID">
+
+                                        </select>
+
+                                    </div>
+                                </div>
+<!--医生-->
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="regLevels"><span class="redSpan">*</span>号&nbsp;&nbsp;&nbsp;别</label>
+                                    <div class="col-sm-3">
+
+
+                                        <select class="form-control" id="regLevels" name="regLevel">
+
+                                        </select>
+
+                                    </div>
+<!-- 病历本-->
+                                    <label  class="col-sm-3 control-label" for="isNeedBook"><span class="redSpan">*</span>&nbsp;病历本</label>
+                                    <div class="col-sm-3">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="isNeedBook" name="isNeedBook" value=1>
+                                        </div>
+
+                                    </div>
+                                </div>
+<!--收费方式-->
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label" for="paytype"><span class="redSpan">*</span>收费方式</label>
+                                    <div class="col-sm-3">
+
+
+                                        <select class="form-control" id="paytype">
+                                            <option>现金</option>
+                                            <option>支付宝</option>
+                                            <option>银联</option>
+                                        </select>
+
+                                    </div>
+                                    <!--  医生-->
+                                    <label class="col-sm-3 control-label" for="fee"><span class="redSpan">*</span>应付金额</label>
+                                    <div class="col-sm-3">
+                                        <span class="form-control" id="fee">输入金额</span>
+<!--                                        <input id="fee" type="text" class="form-control" placeholder="请输入应付金额">-->
+                                    </div>
+                                </div>
+<!--看诊日期-->
+                                <div class="form-group">
+
+                                    <label for="diagTime" class="col-sm-3 control-label" >看诊日期</label>
+                                    <div class="col-sm-7">
+                                        <p>
+                                        <div id="diagTime" class="bfh-datepicker" data-format="y-m-d" data-date="today"></div>
+                                        </p>
+                                    </div>
+                                </div>
+
+<!--                                与隔壁对其-->
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                </div>
+
+
+            </form>
+
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="vendors/form-helpers/js/bootstrap-formhelpers.min.js"></script>
+
+    <script src="vendors/select/bootstrap-select.min.js"></script>
+
+    <script src="vendors/tags/js/bootstrap-tags.min.js"></script>
+
+    <script src="vendors/mask/jquery.maskedinput.min.js"></script>
+
+    <script src="vendors/moment/moment.min.js"></script>
+
+    <script src="vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <!-- bootstrap-datetimepicker -->
+    <link href="vendors/bootstrap-datetimepicker/datetimepicker.css" rel="stylesheet">
+    <script src="vendors/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
+    <script src="js/custom.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/formToJson.js"></script>
+    <script src="js/token_cookie.js"></script>
+
+<!--    validate t-->
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+    <script type="text/javascript">
+
+
+
+
+        var a_validator;
+        $().ready(function() {
+            a_validator = $("#register_form").validate();
+        });
+
+
+        $(function() {
+
+
+            //后端端口号
+            var portnum = 'http://localhost:8082';
+
+            //获取页面中sections
+            displaySections(portnum);
+
+
+            //通过身份证获取其他基本信息
+            $("#identityID").blur(function () {
+                getInfoByIdentity("#identityID", portnum);
+            });
+
+            //自动计算年龄
+            $("#birth").mouseleave(function () {
+                var age = ages($("#birth").val());
+                $("#age").val(age);
+            })
+
+            //提交参数
+            $("#reg_submit").click(function () {
+                //addInfo(a_validator);
+                addInfo(a_validator, portnum)
+            });
+        })
+
+
+        function displaySections(portnum) {
+            var departments;
+            var doctors;
+            var regLevels;
+            //加载页面内容:departments\doctors\regLevel
+            $.ajax({
+                type:'post',
+                url:portnum+'/api/his_reg/display',
+                contentType:'application/json;charset=utf-8',
+                success:function(data){
+                    if(data.code===0){
+
+                        var listjson = data.data;
+                        departments = listjson["departments"];
+                        doctors = listjson["doctors"];
+                        regLevels = listjson["regLevels"];
+                        //alert(JSON.stringify(regLevels));
+
+                        jsonToSelectList(regLevels,"#regLevels");
+                        jsonToSelectList(doctors,"#doctors");
+                        jsonToSelectList(departments,"#departments")
+
+                    }else {
+                        alert(data.msg);
+                    }
+                },
+                error:function () {
+                    alert("网络异常，请重试！");
+                }
+            });
+
+        }
+
+        //将接受的json数据处理到section
+        function jsonToSelectList(jsonData,domID) {
+            //循环遍历
+            for(var key in jsonData){
+                $(domID).append('<option value="'+jsonData[key].id+'" >'+jsonData[key].name+'</option>')
+                //console.log(jsonData[key].id+"::::"+jsonData[key].name)
+            }
+        }
+
+        //通过身份证号获取病人基本信息
+        function getInfoByIdentity(domID,portnum) {
+            var identityID = $(domID).val();
+            $.ajax({
+                type:'get',
+
+                url: portnum+"/api/his_reg/getpatientbyidentity?identityID="+identityID,
+                contentType:'application/json;charset=utf-8',
+                success:function(data){
+                    if(data.code===0){
+                        var patientInfo = data.data;
+
+
+                        //将信息填入
+                        $("#name").val(patientInfo["name"]);
+                        $("#medicalRecord").val(patientInfo["medRecID"]);
+                        $("#sex").val(patientInfo["sex"]);
+                        $("#birth").val(patientInfo["birthDate"]);
+                        $("#age").val(patientInfo["age"]);
+                        $("#address").val(patientInfo["address"]);
+
+
+                    }else {
+                        $("#medicalRecord").val(-1);
+                        alert(data.msg);
+
+                    }
+                }
+            });
+
+        }
+
+        //根据出生日期 得到周岁年龄
+        //参数strBirthday已经是正确格式的2007-02-09这样的日期字符串
+        //后续再增加相关的如日期判断等JS关于日期处理的相关方法
+        function   ages(str) {
+            var   r   =   str.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/);
+            if(r==null)return   false;
+            var   d=   new   Date(r[1],   r[3]-1,   r[4]);
+            if   (d.getFullYear()==r[1]&&(d.getMonth()+1)==r[3]&&d.getDate()==r[4])
+            {
+                var   Y   =   new   Date().getFullYear();
+                return(Y-r[1]);
+            }
+            return("输入的日期格式错误！");
+        }
+
+        //提交页面信息
+        function addInfo(a_validator,portnum) {
+            if (a_validator.form()){
+
+                //获取表单
+                var jsonData = $("#register_form").serializeObject();
+
+                //alert(JSON.stringify(jsonData));
+
+                var isNeedBook = 0;
+
+                if ($("#isNeedBook").prop("checked")){
+                    isNeedBook = 1;
+                }
+
+                var newJsonData = {
+                    "invoiceCode":Number(jsonData["invoiceCode"]),
+                    "medRecID":Number(jsonData["medicalRecord"]),
+                    "name":jsonData["name"],
+                    "age":Number(jsonData["age"]),
+                    "sex":Number(jsonData["sex"]),
+                    "identityID":jsonData["identityID"],
+                    "address":jsonData["address"],
+                    "noonType":jsonData["noonType"],
+                    "deptID":Number(jsonData["deptID"]),
+                    "docID":Number(jsonData["docID"]),
+                    "regLevelID":Number(jsonData["regLevel"]),
+                    "isNeedBook":isNeedBook,
+                    "birthDate":$("#birth").val(),
+                    "diagTime":$("#diagTime").val()
+                }
+
+
+                $.ajax({
+                    type:'post',
+                    url: portnum+ '/api/his_reg/addRegInfo',
+                    contentType:'application/json;charset=utf-8',
+                    data:JSON.stringify(newJsonData),
+                    beforeSend: function (xhr) {
+                        //var token = getCookie("my_token");
+                        var token = getCookie("my_token");
+                        xhr.setRequestHeader("Authorization", token);
+                    },
+                    success:function(data){
+                        if(data.code===0){
+                            console.log(JSON.stringify(data));
+                            alert(data.msg);
+                            $("#fee").html(data.data["regFee"]);
+
+                        }else {
+                            alert(data.msg);
+                        }
+                    }
+
+
+                });
+
+            }
+
+        }
+
+        function checkToken(portnum) {
+            $.ajax({
+                type: 'post',
+                async: false,
+                url: portnum + '/api/user/tokentest',
+                beforeSend: function (xhr) {
+                    //var token = getCookie("my_token");
+                    var token = getCookie("my_token");
+                    xhr.setRequestHeader("Authorization", token);
+                },
+                contentType: 'application/json;charset=utf-8',
+                success: function (data) {
+                    console.log(data);
+                    alert(log(data.msg));
+                    if (data.code === 0) {
+                        console.log(data.data);
+                        alert(data.data["id"]);
+                        return data.data["id"];
+                    } else {
+                        window.location.href = "login.html";
+                    }
+
+
+                }
+            })
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

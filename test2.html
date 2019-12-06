@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery用面向对象的思想来编写验证表单的插件</title>
+    <meta charset="UTF-8">
+
+    <style type="text/css">
+
+
+
+        form {margin:2em 0;}
+        input {font-family:sans-serif; font-size:1.4em; padding:4px;}
+        label {display: block; margin-bottom:2px; font-size:1.4em;}
+        fieldset input {width: 225px; margin-bottom: 5px;}
+        legend {font-weight:bold; font-size:1.4em;}
+        fieldset { padding:2em; border: 1px solid #ccc;}
+        input[type=submit] {margin-top:0.5em;}
+
+        .error input {border:1px solid red;}
+        .errorlist {margin:0; color: red; margin-bottom:10px;}
+
+        #valid-form {margin:5px 0; display: block; color:green;}
+
+    </style>
+
+    <script src="https://code.jquery.com/jquery.js">
+    </script>
+
+    <script src="js/validate.js"></script>
+
+    <script>
+
+
+        $(function(){ // jQuery DOM ready function.
+
+            var myForm = $("#demo-form");
+
+            myForm.validation();
+
+            // We can check if the form is valid on
+            // demand, using our validate function.
+            $("#btn_submit").click(function() {
+
+                if(!myForm.token_cookie()) {
+
+                    myForm.append("<strong id='valid-form'>Form is valid!</strong>");
+                }
+            });
+
+
+        });
+    </script>
+
+
+</head>
+
+<body>
+<div class="wapper">
+    <div class="content">
+        <h2>Demo</h2><div class="article-demo">
+        <form action="#demo-form" id="demo-form">
+            <fieldset>
+                <legend>Test fields</legend>
+                <div>
+                    <label for="demo-field-1">Required field</label>
+                    <input id="demo-field-1" validation="required" name="demo-field-1" type="text" />
+                </div>
+                <div>
+                    <label for="demo-field-2">Email field</label>
+                    <input id="demo-field-2" validation="email" name="demo-field-2" type="text" />
+                </div>
+                <div>
+                    <label for="demo-field-3">URL field</label>
+                    <input id="demo-field-3" validation="url" name="demo-field-3" type="text" />
+                </div>
+            </fieldset>
+            <div class="submit-area">
+                <input value="Validate!" type="submit" id="btn_submit" />
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+</body>

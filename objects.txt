@@ -1,0 +1,36 @@
+{
+    "data":[
+    {
+        "medRecID":60063203,
+        "name":"大力哈哈",
+        "sex":"男",
+        "age":12,
+        "regID":12121,
+        "status":3
+    },
+    {
+            "medRecID":6032003,
+            "name":"力哈哈",
+            "sex":"男",
+            "age":12,
+            "regID":12121,
+            "status":3
+    },
+    {
+            "medRecID":6136003,
+            "name":"大力哈",
+            "sex":"男",
+            "age":12,
+            "regID":12121,
+            "status":3
+    },
+    {
+            "medRecID":6006003,
+            "name":"大力哈哈",
+            "sex":"男",
+            "age":12,
+            "regID":12121,
+            "status":3
+    }
+    ]
+}
