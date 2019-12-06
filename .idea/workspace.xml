@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b13df3fe-d513-45d8-9aa5-0da00433969d" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Unstyled Select</find>
+      <find>Form Widgets</find>
+      <find>iden</find>
+      <find>regLevels</find>
+      <find>金额</find>
+      <find>invoice</find>
+      <find>cursor</find>
+      <find>门诊诊</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1RgXIhfclSVq6irZMzgNlUxEmO5" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ChenTong\Desktop\HIS-UI" />
+      <recent name="C:\Users\ChenTong\Desktop\HIS-UI\css" />
+      <recent name="C:\Users\ChenTong\Desktop\HIS-UI\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ChenTong\Desktop\HIS-UI" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b13df3fe-d513-45d8-9aa5-0da00433969d" name="Default Changelist" comment="" />
+      <created>1566805791680</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566805791680</updated>
+      <workItem from="1566805793711" duration="8429000" />
+      <workItem from="1566875121578" duration="20117000" />
+      <workItem from="1566991393438" duration="4050000" />
+      <workItem from="1567043122986" duration="13575000" />
+      <workItem from="1567082022523" duration="6533000" />
+      <workItem from="1567169662138" duration="6968000" />
+      <workItem from="1567214516375" duration="3044000" />
+      <workItem from="1567231491833" duration="11407000" />
+      <workItem from="1567264180419" duration="6022000" />
+      <workItem from="1567294658335" duration="2587000" />
+      <workItem from="1567316746152" duration="24848000" />
+      <workItem from="1567468161700" duration="6530000" />
+      <workItem from="1567555741547" duration="2900000" />
+      <workItem from="1567737656298" duration="3141000" />
+      <workItem from="1567987168748" duration="2003000" />
+      <workItem from="1568021102905" duration="2670000" />
+      <workItem from="1568076568685" duration="8505000" />
+      <workItem from="1568202166203" duration="933000" />
+      <workItem from="1568257226502" duration="11527000" />
+      <workItem from="1568424261829" duration="40578000" />
+      <workItem from="1568529302274" duration="6108000" />
+      <workItem from="1568537168878" duration="11994000" />
+      <workItem from="1568593568880" duration="21346000" />
+      <workItem from="1568683529688" duration="1558000" />
+      <workItem from="1568685284376" duration="23620000" />
+      <workItem from="1568773944722" duration="33698000" />
+      <workItem from="1568861685915" duration="6377000" />
+      <workItem from="1568964732643" duration="12988000" />
+      <workItem from="1569035530224" duration="674000" />
+      <workItem from="1569053931415" duration="4365000" />
+      <workItem from="1570089636102" duration="556000" />
+      <workItem from="1575615954098" duration="21000" />
+      <workItem from="1575616039057" duration="76000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="263" y="0" key="CommitChangelistDialog2" timestamp="1575616339877">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="263" y="0" key="CommitChangelistDialog2/0.0.1280.720@0.0.1280.720" timestamp="1575616339877" />
+    <state x="517" y="256" width="270" height="208" key="Github.ShareDialog" timestamp="1575616230685">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="517" y="256" width="270" height="208" key="Github.ShareDialog/0.0.1280.720@0.0.1280.720" timestamp="1575616230685" />
+    <state x="401" y="69" key="Github.UntrackedFilesDialog" timestamp="1575616248170">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="401" y="69" key="Github.UntrackedFilesDialog/0.0.1280.720@0.0.1280.720" timestamp="1575616248170" />
+  </component>
+</project>
